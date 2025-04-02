@@ -54,16 +54,16 @@
                 <label for="expense-amount" class="form-label">Số tiền:</label>
                 <input type="text" class="form-control" id="expense-amount" value="50.000 đ">
             </div>
-            <button class="btn btn-primary w-100" onclick="sendData()">Lưu thay đổi</button>
+            <div class="d-flex gap-2 mt-3">
+                <button class="btn btn-primary flex-grow-1" onclick="sendData()">💾 Lưu thay đổi</button>
+                <button class="btn btn-danger flex-grow-1" onclick="closeApp()">❌ Đóng</button>
+            </div>
+
         </div>
 
         <!-- <div class="text-center my-4">
             <button class="btn btn-secondary" onclick="toggleDarkMode()">🌙 Chuyển chế độ tối</button>
         </div> -->
-
-        <div class="text-center">
-            <button class="btn btn-danger" onclick="closeApp()">❌ Đóng</button>
-        </div>
     </div>
 
     <script>
