@@ -72,6 +72,34 @@
 
         let user = tg.initDataUnsafe.user || {};
         let initData = tg.initData;
+        document.addEventListener("DOMContentLoaded", async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const key = urlParams.get("key");
+
+            if (!key) {
+                alert("Missing key parameter!");
+                return;
+            }
+
+            try {
+                // const response = await fetch(`https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec?action=get_expense&key=${key}`);
+                // const result = await response.json();
+                const testdata = { "success": true, "data": { "timestamp": "2025-03-12T01:48:44.000Z", "label": "Ăn sáng cafe", "price": 50000, "delete_flag": "", "key_year_month": "2025_03", "key_year_month_date": "2025_03_12", "key_unique": 1741744124017 } }
+                const result = testdata;
+                if (!result.success) {
+                    alert("Expense not found!");
+                    return;
+                }
+
+                // Set data into the GUI
+                document.getElementById("label").value = result.data.label;
+                document.getElementById("price").value = result.data.price;
+                document.getElementById("timestamp").value = result.data.timestamp;
+            } catch (error) {
+                console.error("Error fetching expense data:", error);
+                alert("Failed to load expense data.");
+            }
+        });
 
         function sendData() {
             let payload = {
