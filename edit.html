@@ -57,8 +57,12 @@
             <button class="btn btn-primary w-100" onclick="sendData()">Lưu thay đổi</button>
         </div>
 
-        <div class="text-center my-4">
+        <!-- <div class="text-center my-4">
             <button class="btn btn-secondary" onclick="toggleDarkMode()">🌙 Chuyển chế độ tối</button>
+        </div> -->
+
+        <div class="text-center">
+            <button class="btn btn-danger" onclick="closeApp()">❌ Đóng</button>
         </div>
     </div>
 
@@ -97,6 +101,10 @@
 
         function toggleDarkMode() {
             document.body.classList.toggle("dark-mode");
+        }
+
+        function closeApp() {
+            tg.close();
         }
     </script>
 
